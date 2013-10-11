@@ -14,8 +14,10 @@
 </head> 
 <body> 
 	<div data-role="page" id="page1"> 
-		<div data-role="header" data-theme="b"> 
-			<h1>Limo Services</h1> 
+		<div data-role="header" data-theme="b">
+			<div>
+				<h1 align="center">AB Limo Services</h1>				
+			</div> 
 			<div class="ui-body-b">
 				<div data-role="navbar" id="navbar-1" data-iconpos="left">
 				</div>
@@ -23,32 +25,29 @@
 		</div> 
 		<div data-role="content"> 
 			 <div calss="ui-body">
-			 <h1>Admin Login</h1>
-			<form name="login" id="form-1" action="adminhome.xhtml">
-				<table data-role="table" id="table-1" class="ui-responsive" data-mode="reflow">
-					<thead>	
-						<th></th>					
-					</thead>
-					<tbody>
-						<tr>
-							<td><label for="text-1">UserName:</label></td>
-							<td><input name="text-1" id="text-1" data-clear-btn="true" value="" data-theme="c" type="text"/></td>							
-						</tr>
-						<tr>
-							<td><label for="password-1">Password:</label></td>
-							<td><input name="password-1" id="password-1" data-clear-btn="true" value="" data-theme="c" type="password"/></td>							
-						</tr>
-						<tr>
-							<td></td>
-							<td><a href="adminhome.xhtml" id="button-1" data-role="button" data-icon="star">Login</a></td>
-						</tr>						
-					</tbody>
-				</table>				
+			 
+			 <form name="login" id="form-1" action="adminhome.xhtml">
+			
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="username">Username:</label>
+					<input type="text" name="username" id="username" value="" placeholder="Username"/>
+				</div>
+				
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="password">Password:</label>
+					<input type="password" name="password" id="password" value="" placeholder="Password"/>
+				</div>
+				
+				<div data-role="fieldcontain">
+					<a href="adminhome.xhtml" id="button-1" data-role="button" data-corners="false">SignIn</a>
+				</div>								
 			</form>
 			</div>
+			<div data-role="fieldcontain" style=" height : 71px;">
+			</div>
 		</div> 
-		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="b">
-			<h6>Limo Services</h6>					
+		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="c">
+			<h6>Terms | Policy</h6>					
 		</div>
 	</div> 
 </body> 
