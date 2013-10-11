@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>jQuery Mobile Template</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" 
+		content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" 
+		href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> 
+	<script type="text/javascript" 
+		src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+	<script type="text/javascript" 
+		src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script> 
+</head> 
+<body> 
+	<div data-role="page" id="page1"> 
+		<div data-role="header" data-theme="b"> 
+			<h1>Limo Services</h1> 
+			<div class="ui-body-b">
+				<div data-role="navbar" id="navbar-1" data-iconpos="left">
+				</div>
+			</div>
+		</div> 
+		<div data-role="content"> 
+			 <div calss="ui-body">
+			 <h1>Admin Login</h1>
+			<form name="login" id="form-1" action="adminhome.xhtml">
+				<table data-role="table" id="table-1" class="ui-responsive" data-mode="reflow">
+					<thead>	
+						<th></th>					
+					</thead>
+					<tbody>
+						<tr>
+							<td><label for="text-1">UserName:</label></td>
+							<td><input name="text-1" id="text-1" data-clear-btn="true" value="" data-theme="c" type="text"/></td>							
+						</tr>
+						<tr>
+							<td><label for="password-1">Password:</label></td>
+							<td><input name="password-1" id="password-1" data-clear-btn="true" value="" data-theme="c" type="password"/></td>							
+						</tr>
+						<tr>
+							<td></td>
+							<td><a href="adminhome.xhtml" id="button-1" data-role="button" data-icon="star">Login</a></td>
+						</tr>						
+					</tbody>
+				</table>				
+			</form>
+			</div>
+		</div> 
+		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="b">
+			<h6>Limo Services</h6>					
+		</div>
+	</div> 
+</body> 
+</html>

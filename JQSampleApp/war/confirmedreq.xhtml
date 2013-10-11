@@ -1,0 +1,81 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>jQuery Mobile Template</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" 
+		content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" 
+		href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> 
+	<script type="text/javascript" 
+		src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+	<script type="text/javascript" 
+		src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script> 
+</head> 
+<body> 
+	<div data-role="page" id="page1"> 
+		<div data-role="header" id="header-1" data-theme="b">
+			<a id="button-1" data-rel="back" data-role="button" data-inline="true" data-corners="true" data-icon="arrow-l">Back</a>
+			<h1>Limo Services</h1> 
+			<a href="adminlogin.xhtml" id="button-2" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="minus">SignOut</a>
+			<div class="ui-body-b">
+				<div data-role="navbar" id="navbar-1" data-iconpos="left">
+					<ul>						
+						<li><a href="adminhome.xhtml" data-icon="home">AdminHome</a></li>
+						<li><a href="/faces/pendingreq.xhtml" data-icon="star">PendingRequest</a></li>
+						<li><a href="/faces/confirmedreq.xhtml" data-icon="gear">ConfirmedRequest</a></li>					
+				</ul>
+				</div>
+			</div>
+		</div> 
+		<div data-role="content"> 
+		<div data-role="collapsible" data-iconpos="right" data-expanded-icon="bars">
+				<h1>Senthil Kumar <code> - 10/23/2013:10:00AM - </code> <small> Fremont, CA 94555</small></h1>
+				<lable>Address:</lable> <small> 3803 Darwin Dr, Fremont, CA 94555</small>
+				<div>		
+					Call :<a href="tel:+15103869673">(510)-386-9673</a>
+					<a href="#confirmpopup" data-role="button" data-inline="true" data-transition="flip" data-position-to="origin" data-rel="popup" data-icon="alert">Confirm</a>
+					<div data-role="popup" id="confirmpopup" class="ui-content" data-theme="b" >
+						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+						<p><h1>Senthil Kumar</h1></p>
+						<h3>Would you like to change the confirmation status</h3>
+						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="check" >Yes</a>
+					</div>
+				</div>						
+			</div>
+
+			<div data-role="collapsible" data-iconpos="right" data-expanded-icon="bars">
+				<h1>John Peter <code> - 10/23/2013:10:00AM - </code> <small> SanFrancisco, CA 94105</small></h1>
+				<lable>Address:</lable> <small> 3803 Darwin Dr, SanFrancisco, CA 94105</small>
+				<div>		
+					Call :<a href="tel:+15103869673">(510)-386-9673</a>
+					<a href="#confirmpopup" data-role="button" data-inline="true" data-transition="flip" data-position-to="origin" data-rel="popup" data-icon="alert">Confirm.</a>
+					<div data-role="popup" id="confirmpopup" class="ui-content" data-theme="b" >
+						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+						<p><h1>John Peter</h1></p>
+						<h3>Would you like to change the confirmation status?</h3>
+						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="check" >Yes</a>
+					</div>
+				</div>						
+			</div>
+			
+			<ul id="listOfItems" data-role="listview" data-inset="true" 
+				data-filter="true"> 
+				<li><a href="">One</a></li> 
+				<li><a href="">Two</a></li> 
+				<li><a href="">Three</a></li> 
+			</ul> 
+		</div> 
+		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="b">
+			<h6>Limo Services</h6>
+			<div data-role="navbar" data-iconpos="left">
+				<ul>
+					<li><a href="/faces/adminhome.xhtml" data-icon="plus" data-iconpos="top">Home</a></li>
+					<li><a href="/faces/locations.xhtml" data-icon="plus" data-iconpos="top">Location</a></li>
+					<li><a href="#" data-icon="arrow-d" data-iconpos="top">Contact Us</a></li>				
+				</ul>
+			</div>
+		</div>
+	</div> 
+</body> 
+</html>
