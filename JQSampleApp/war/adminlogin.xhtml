@@ -1,5 +1,8 @@
 <!DOCTYPE html> 
-<html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 <head> 
 	<title>jQuery Mobile Template</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -23,28 +26,25 @@
 				</div>
 			</div>
 		</div> 
-		<div data-role="content"> 
-			 <div calss="ui-body">
-			 
-			 <form name="login" id="form-1" action="adminhome.xhtml">
-			
-				<div data-role="fieldcontain" class="ui-hide-label">
-					<label for="username">Username:</label>
-					<input type="text" name="username" id="username" value="" placeholder="Username"/>
-				</div>
-				
-				<div data-role="fieldcontain" class="ui-hide-label">
-					<label for="password">Password:</label>
-					<input type="password" name="password" id="password" value="" placeholder="Password"/>
-				</div>
-				
-				<div data-role="fieldcontain">
-					<a href="adminhome.xhtml" id="button-1" data-role="button" data-corners="false">SignIn</a>
-				</div>								
-			</form>
-			</div>
-			<div data-role="fieldcontain" style=" height : 71px;">
-			</div>
+		<div data-role="content"> 			
+			<h:form>
+			<table align="center">
+				<thead></thead>
+				<tbody>
+					<tr>
+						<h:outputLabel for="username" value="UserName" />
+						<h:inputText id="username" value="#{homeBean.name}" />
+					</tr>
+					<tr>
+						<h:outputLabel for="password" value="Password" />
+						<h:inputSecret id="password" value="#{homeBean.password}" />				
+					</tr>
+					<tr>
+						<h:commandButton value="SignIn" action="adminhome" />
+					</tr>
+				</tbody>
+			</table>
+			</h:form>
 		</div> 
 		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="c">
 			<h6>Terms | Policy</h6>					

@@ -1,10 +1,10 @@
-package org.sen.jq;
+package com.sen.limoservice;
 
 import java.io.IOException;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class JQSampleAppServlet extends HttpServlet {
+public class ABLimoServicesServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		resp.setContentType("text/plain");

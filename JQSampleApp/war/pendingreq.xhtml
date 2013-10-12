@@ -1,5 +1,8 @@
 <!DOCTYPE html> 
-<html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 <head> 
 	<title>jQuery Mobile Template</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -28,43 +31,25 @@
 				</div>
 			</div>
 		</div> 
-		<div data-role="content">			
-			<div data-role="collapsible" data-iconpos="right" data-expanded-icon="bars">
-				<h1>Senthil Kumar <code> - 10/23/2013:10:00AM - </code> <small> Fremont, CA 94555</small></h1>
-				<lable>Address:</lable> <small> 3803 Darwin Dr, Fremont, CA 94555</small>
+		<div data-role="content">
+			<div data-role="collapsible-set">			
+			<ui:repeat value="#{homeBean.persons}" var="item">			
+			  <div data-role="collapsible" data-iconpos="right" data-expanded-icon="bars">
+				<h1>#{item.name} <code> - 10/23/2013:10:00AM - </code> <small> #{item.address}</small></h1>
+				<lable>Address:</lable> <small> #{item.address}</small>
 				<div>		
-					Call :<a href="tel:+15103869673">(510)-386-9673</a>
+					Call :<a href="tel:+15103869673">#{item.phone}</a>
 					<a href="#confirmpopup" data-role="button" data-inline="true" data-transition="flip" data-position-to="origin" data-rel="popup" data-icon="alert">Pending Confirm?</a>
 					<div data-role="popup" id="confirmpopup" class="ui-content" data-theme="b" >
 						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-						<p><h1>Senthil Kumar</h1></p>
+						<p><h1>#{item.name}</h1></p>
 						<h3>Would you like to confirm this reservation?</h3>
 						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="check" >Yes</a>
 					</div>
 				</div>						
+			 </div>
+			</ui:repeat>
 			</div>
-
-			<div data-role="collapsible" data-iconpos="right" data-expanded-icon="bars">
-				<h1>John Peter <code> - 10/23/2013:10:00AM - </code> <small> SanFrancisco, CA 94105</small></h1>
-				<lable>Address:</lable> <small> 3803 Darwin Dr, SanFrancisco, CA 94105</small>
-				<div>		
-					Call :<a href="tel:+15103869673">(510)-386-9673</a>
-					<a href="#confirmpopup" data-role="button" data-inline="true" data-transition="flip" data-position-to="origin" data-rel="popup" data-icon="alert">Pending Confirm?</a>
-					<div data-role="popup" id="confirmpopup" class="ui-content" data-theme="b" >
-						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-						<p><h1>John Peter</h1></p>
-						<h3>Would you like to confirm this reservation?</h3>
-						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="check" >Yes</a>
-					</div>
-				</div>						
-			</div>
-
-
-			<ul id="listOfItems" data-role="listview" data-inset="true"  data-filter="true" data-icon="bars"> 
-				<li><a href="" >One</a></li> 
-				<li><a href="">Two</a></li> 
-				<li><a href="">Three</a></li> 
-			</ul> 
 		</div> 
 		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="c">
 			<h6>Terms | Policy</h6>	
