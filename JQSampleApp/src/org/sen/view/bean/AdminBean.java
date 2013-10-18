@@ -84,6 +84,7 @@ public class AdminBean implements Serializable{
         System.out.println("clickedReqId :"+clickedReqId);
         RequestDAO dao = new RequestDAO();
         dao.updateRequestStatus("Confirmed", clickedReqId);
+        //dao.updateRequestStatus("Confirmed", "1");
     }
 
     public void setSelectedRequestVO(RequestVO selectedRequestVO) {
