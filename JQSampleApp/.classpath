@@ -11,5 +11,6 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JdbcDriver"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

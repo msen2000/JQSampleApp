@@ -5,21 +5,21 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean
+@ManagedBean(name="loginBean")
 @SessionScoped
 public class LoginBean implements Serializable {
-    private String loginname;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String loginname;
     private String name;
-
 	private String password;
     private String errorMessage;
     
 
     public LoginBean() {
         super();
-        errorMessage="";
-        name = "admin";
-        loginname = "admin";
     }
     
     public String getLoginname(){
