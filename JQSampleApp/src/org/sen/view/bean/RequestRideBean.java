@@ -15,11 +15,13 @@ public class RequestRideBean  implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private RequestVO requestVO = new RequestVO();
+	private RequestVO requestVO;
     private String requestConfNumber;
+    
     public RequestRideBean() {
         super();
         requestConfNumber = "";
+        requestVO = new RequestVO();
     }
 
     public void setRequestVO(RequestVO requestVO) {
@@ -50,7 +52,9 @@ public class RequestRideBean  implements Serializable{
             req.status = "Pending";
             requestConfNumber = dao.insertRequest(req);
             System.out.println("requestConfNumber : "+requestConfNumber);
-            return "reqConfirm";                
+            //return "reqConfirm";                
+            //return "adminlogin";
+            return "requestconfirm";
     }
 
     public void setRequestConfNumber(String requestConfNumber) {

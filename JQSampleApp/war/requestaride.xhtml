@@ -1,0 +1,107 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:m="http://code.google.com/p/gmaps4jsf/">
+<head> 
+	<title>jQuery Mobile Template</title> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" 
+		content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" 
+		href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> 
+	<script type="text/javascript" 
+		src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+	<script type="text/javascript" 
+		src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	<script src="http://maps.google.com/maps/api/js?sensor=false">
+	</script>
+</head>
+<body>
+
+<div data-role="page" id="page1" align="center"> 
+
+	<div data-role="header" id="header-1" data-theme="b">
+		<a id="button-1" data-rel="back" data-role="button" data-inline="true" data-corners="true" data-icon="home">Home</a>
+		<h1 align="center">AB Limo Services</h1>				
+		<div class="ui-body-b">
+			<div data-role="navbar" id="navbar-1" data-iconpos="left">
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="content">	
+		<h:form>
+		<table>
+			<thead></thead>
+		<tbody>
+			<tr>
+                <td><h:outputText value="Type Of Limo: " /></td>
+                <td><h:inputText id="typeOfLimo"  value="#{requestRideBean.requestVO.typeOfLimo}" /></td>
+    		</tr>        
+            <tr>
+                <td><h:outputText value="Start Date: " /></td>
+                <td><h:inputText id="startDate"  value="#{requestRideBean.requestVO.startDate}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="End Date: " /></td>
+                <td><h:inputText id="endDate"  value="#{requestRideBean.requestVO.endDate}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Start Time: " /></td>
+                <td><h:inputText id="startTime"  value="#{requestRideBean.requestVO.startTime}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="End Time: " /></td>
+                <td><h:inputText id="endTime"  value="#{requestRideBean.requestVO.endTime}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Passengers: " /></td>
+                <td><h:inputText id="passengers"  value="#{requestRideBean.requestVO.passengers}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Your Name: " /></td>
+                <td><h:inputText id="yourName"  value="#{requestRideBean.requestVO.yourName}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Contact Number: " /></td>
+                <td><h:inputText id="contactNumber"  value="#{requestRideBean.requestVO.contactNumber}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Email: " /></td>
+                <td><h:inputText id="email"  value="#{requestRideBean.requestVO.email}" /></td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Occasion: " /></td>
+                <td><h:inputText id="occasion"  value="#{requestRideBean.requestVO.occasion}" /></td>
+            </tr>
+            <tr>		            
+                <td><h:outputText value="NeedADrink: " /></td>
+                <td><h:inputText id="needADrink"  value="#{requestRideBean.requestVO.needADrink}" /></td>
+        	</tr>			
+			<tr>
+				<td></td>
+				<td><h:commandButton action="#{requestRideBean.onSubmitRequest}" value="Submit"></h:commandButton></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		</table>	
+		</h:form>
+	</div> 
+	<div data-role="footer" id="footer-1" class="ui-bar" data-theme="b">
+			<h6>Limo Services</h6>
+			<div data-role="navbar" data-iconpos="left">
+				<ul>
+					<li><a href="/faces/adminhome.xhtml" data-icon="plus" data-iconpos="top">Home</a></li>
+					<li><a href="/faces/locations.xhtml" data-icon="plus" data-iconpos="top">Location</a></li>
+					<li><a href="#" data-icon="arrow-d" data-iconpos="top">Contact Us</a></li>
+				</ul>
+			</div>			
+		</div>
+</div>
+</body>
+</html>
