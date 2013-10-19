@@ -12,14 +12,13 @@ public class LoginBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String loginname;
-    private String name;
-	private String password;
-    private String errorMessage;
-    
+	private String loginname;  // username
+	private String password;   // password
+	private String errorMessage; //login failure error message
 
-    public LoginBean() {
+    public LoginBean() {    	
         super();
+        errorMessage="";
     }
     
     public String getLoginname(){
@@ -38,18 +37,15 @@ public class LoginBean implements Serializable {
         this.password = password;
     }
     
-    public String CheckValidUser() { 
+    public String CheckValidUser() {
+    	errorMessage = "";
         if(loginname.equals("admin") &&  password.equals("admin")){
-//            return "adminHome";
         	System.out.println("CheckValidUser : valid user !");
-        	
-            return "adminLanding";
-        }
-        else{
-            //return "fail";
+            return "adminhome";
+        } else {           
         	System.out.println("CheckValidUser : NOT valid user !");
-            errorMessage = "Login Failed. Plesase try again with adim/admin !!!";
-            return "login";
+            errorMessage = "Login Failed. Plesase try again with valid user and password!!!";
+            return "adminlogin";
         }
     }
 
@@ -60,12 +56,4 @@ public class LoginBean implements Serializable {
     public String getErrorMessage() {
         return errorMessage;
     }
-    public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 }

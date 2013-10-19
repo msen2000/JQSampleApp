@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13814788230460" configfile="/JQSampleApp/WebContent/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13814788230460" configfile="/JQSampleApp/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="adminlogin" x="122" y="754" id="pf13821462208770" outlinks="pf13821462208781 pf13821462208782 pf13821462208783 pf13821462208784" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="adminhome.xhtml" x="338" y="178" id="pf13821462208785" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13821462208781" path="/adminhome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pendingreq.xhtml" x="338" y="562" id="pf13821462208786" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf13821462208782" path="/pendingreq.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="confirmedreq.xhtml" x="338" y="946" id="pf13821462208787" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf13821462208783" path="/confirmedreq.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adminlogin.xhtml" x="338" y="1330" id="pf13821462208788" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf13821462208784" path="/adminlogin.xhtml"/>
+  <links id="pf13821462208781" target="pf13821462208785" source="pf13821462208770" outcome="adminhome" fromaction="adminhome"/>
+  <links id="pf13821462208782" target="pf13821462208786" source="pf13821462208770" outcome="pendingreq" fromaction="pendingreq"/>
+  <links id="pf13821462208783" target="pf13821462208787" source="pf13821462208770" outcome="confirmedreq" fromaction="confirmedreq"/>
+  <links id="pf13821462208784" target="pf13821462208788" source="pf13821462208770" outcome="adminlogin" fromaction="adminlogin"/>
+</pageflow:Pageflow>

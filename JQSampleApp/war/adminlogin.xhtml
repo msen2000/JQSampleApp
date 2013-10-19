@@ -26,10 +26,12 @@
 				</div>
 			</div>
 		</div> 
-		<div data-role="content"> 			
+		<div data-role="content">
 			<h:form>
+			<h:outputText  value="#{loginBean.errorMessage}" style="color:Red;"/>
 			<table align="center">
 				<thead></thead>
+				<!-- 
 				<tbody>
 					<tr>
 						<h:outputLabel for="username" value="UserName" />
@@ -41,6 +43,20 @@
 					</tr>
 					<tr>
 						<h:commandButton value="SignIn" action="adminhome" />
+					</tr>
+				</tbody>
+				-->
+				<tbody>
+					<tr>
+						<h:outputLabel for="username" value="UserName" />
+						<h:inputText id="username" value="#{loginBean.loginname}" />
+					</tr>
+					<tr>
+						<h:outputLabel for="password" value="Password" />
+						<h:inputSecret id="password" value="#{loginBean.password}" />				
+					</tr>
+					<tr>
+						<h:commandButton value="SignIn" action="#{loginBean.CheckValidUser}" />
 					</tr>
 				</tbody>
 			</table>
