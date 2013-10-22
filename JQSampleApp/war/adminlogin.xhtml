@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <head> 
 	<title>jQuery Mobile Template</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -31,32 +32,17 @@
 			<h:outputText  value="#{loginBean.errorMessage}" style="color:Red;"/>
 			<table align="center">
 				<thead></thead>
-				<!-- 
 				<tbody>
 					<tr>
 						<h:outputLabel for="username" value="UserName" />
-						<h:inputText id="username" value="#{homeBean.name}" />
-					</tr>
-					<tr>
-						<h:outputLabel for="password" value="Password" />
-						<h:inputSecret id="password" value="#{homeBean.password}" />				
-					</tr>
-					<tr>
-						<h:commandButton value="SignIn" action="adminhome" />
-					</tr>
-				</tbody>
-				-->
-				<tbody>
-					<tr>
-						<h:outputLabel for="username" value="UserName" />
-						<h:inputText id="username" value="#{loginBean.loginname}" />
+						<h:inputText id="username" value="#{loginBean.loginname}" pt:type="text" pt:placeholder="User Name"/>
 					</tr>
 					<tr>
 						<h:outputLabel for="password" value="Password" />
 						<h:inputSecret id="password" value="#{loginBean.password}" />				
 					</tr>
 					<tr>
-						<h:commandButton value="SignIn" action="#{loginBean.CheckValidUser}" />
+						<h:commandButton value="SignIn" action="#{loginBean.checkValidUser}" />
 					</tr>
 				</tbody>
 			</table>

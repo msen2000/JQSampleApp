@@ -2,15 +2,15 @@ package org.sen.view.bean;
 
 import java.io.Serializable;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean(name="loginBean")
-@SessionScoped
+@RequestScoped
 public class LoginBean implements Serializable {
-    /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private String loginname;  // username
 	private String password;   // password
@@ -18,7 +18,12 @@ public class LoginBean implements Serializable {
 
     public LoginBean() {    	
         super();
-        errorMessage="";
+        System.out.println("LoginBean() ctor called.");        
+    }
+    
+    @PostConstruct
+    public void init() {
+    	System.out.println("LoginBean : init() .");
     }
     
     public String getLoginname(){
@@ -37,11 +42,12 @@ public class LoginBean implements Serializable {
         this.password = password;
     }
     
-    public String CheckValidUser() {
+    public String checkValidUser() {
+    	System.out.println("checkValidUser() called.");
     	errorMessage = "";
         if(loginname.equals("admin") &&  password.equals("admin")){
         	System.out.println("CheckValidUser : valid user !");
-            return "adminhome";
+            return "adminhome?faces-redirect=true";
         } else {           
         	System.out.println("CheckValidUser : NOT valid user !");
             errorMessage = "Login Failed. Plesase try again with valid user and password!!!";

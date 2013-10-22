@@ -6,13 +6,16 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class LoginDAO {
+	
     public LoginDAO() {
         super();
+        System.out.println("LoginDAO() ctor called. "); 
     }
     
     public void getUser(){
-    	 Connection conn = null;
-    	 Statement stmt =null;
+    	System.out.println("getUser() has been invoked.");
+    	Connection conn = null;
+    	Statement stmt =null;
         try {
             conn = DBConnection.getDBConnection();
             stmt = conn.createStatement();

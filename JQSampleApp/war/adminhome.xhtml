@@ -25,7 +25,7 @@
 			<div class="ui-body-b">
 				<div data-role="navbar" id="navbar-1" data-iconpos="top">
 					<ul>						
-						<li><a href="adminhome.xhtml" data-icon="home" data-iconpos="top">AdminHome</a></li>
+						<li><a href="/faces/adminhome.xhtml" data-icon="home" data-iconpos="top">AdminHome</a></li>
 						<li><a href="/faces/pendingreq.xhtml" data-icon="star" data-iconpos="top">PendingRequest</a></li>
 						<li><a href="/faces/confirmedreq.xhtml" id="button-3" data-role="button" data-icon="check" >ConfirmedRequest</a></li>						    
 					</ul>
@@ -34,10 +34,20 @@
 		</div> 
 		<div data-role="content"> 
 			<ul id="listOfItems" data-role="listview" data-inset="true" data-filter="true"> 
-				<li><a href="/faces/pendingreq.xhtml">Pending Requests</a></li>
-				<li><a href="/faces/confirmedreq.xhtml" >Confirmed Requests</a></li>				 
-				<li><a href="/faces/locations.xhtml" >Requests in Map</a></li>
+				<li><a href="/faces/pendingreq.xhtml?faces-redirect=true">Pending Requests</a></li>
+				<li><a href="/faces/confirmedreq.xhtml?faces-redirect=true" >Confirmed Requests</a></li>				 
+				<li><a href="/faces/locations.xhtml?faces-redirect=true" >Requests in Map</a></li>
 			</ul> 
+		
+			<!-- 
+			<h:form>
+			<ul>
+				<li><h:commandButton value="Pending Req" action="pendingreq" /></li>
+				<li><h:commandButton value="Confirmed Reqs" action="confirmedreq" /></li>
+				<li><h:commandButton value="Req in Map" action="/faces/locations.xhtml" /></li>
+			</ul>
+			</h:form>
+			 -->
 		</div> 
 		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="c">
 			<h6>Terms | Policy</h6>		

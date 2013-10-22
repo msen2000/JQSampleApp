@@ -29,5 +29,5 @@
     stale session data. For details, see
     http://code.google.com/appengine/docs/java/config/appconfig.html#Enabling_Sessions
   -->
-
+ 	<async-session-persistence enabled="false" />
 </appengine-web-app>

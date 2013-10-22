@@ -3,7 +3,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:m="http://code.google.com/p/gmaps4jsf/">
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 <head> 
 	<title>jQuery Mobile Template</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
@@ -38,47 +38,47 @@
 		<tbody>
 			<tr>
                 <td><h:outputText value="Type Of Limo: " /></td>
-                <td><h:inputText id="typeOfLimo"  value="#{requestRideBean.requestVO.typeOfLimo}" /></td>
+                <td><h:inputText id="typeOfLimo"  value="#{requestRideBean.requestVO.typeOfLimo}" pt:type="text" pt:placeholder="User Name" /></td>
     		</tr>        
             <tr>
                 <td><h:outputText value="Start Date: " /></td>
-                <td><h:inputText id="startDate"  value="#{requestRideBean.requestVO.startDate}" /></td>
+                <td><h:inputText id="startDate"  value="#{requestRideBean.requestVO.startDate}" pt:type="date" pt:placeholder="01/01/2013" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="End Date: " /></td>
-                <td><h:inputText id="endDate"  value="#{requestRideBean.requestVO.endDate}" /></td>
+                <td><h:inputText id="endDate"  value="#{requestRideBean.requestVO.endDate}" pt:type="date" pt:placeholder="01/01/2013" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="Start Time: " /></td>
-                <td><h:inputText id="startTime"  value="#{requestRideBean.requestVO.startTime}" /></td>
+                <td><h:inputText id="startTime"  value="#{requestRideBean.requestVO.startTime}" pt:type="text" pt:placeholder="10:00AM" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="End Time: " /></td>
-                <td><h:inputText id="endTime"  value="#{requestRideBean.requestVO.endTime}" /></td>
+                <td><h:inputText id="endTime"  value="#{requestRideBean.requestVO.endTime}" pt:type="text" pt:placeholder="10:00AM" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="Passengers: " /></td>
-                <td><h:inputText id="passengers"  value="#{requestRideBean.requestVO.passengers}" /></td>
+                <td><h:inputText id="passengers"  value="#{requestRideBean.requestVO.passengers}" pt:type="number" pt:placeholder="0" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="Your Name: " /></td>
-                <td><h:inputText id="yourName"  value="#{requestRideBean.requestVO.yourName}" /></td>
+                <td><h:inputText id="yourName"  value="#{requestRideBean.requestVO.yourName}" pt:type="text" pt:placeholder="User Name" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="Contact Number: " /></td>
-                <td><h:inputText id="contactNumber"  value="#{requestRideBean.requestVO.contactNumber}" /></td>
+                <td><h:inputText id="contactNumber"  value="#{requestRideBean.requestVO.contactNumber}" pt:type="tel" pt:placeholder="xxx-xxx-xxxx" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="Email: " /></td>
-                <td><h:inputText id="email"  value="#{requestRideBean.requestVO.email}" /></td>
+                <td><h:inputText id="email"  value="#{requestRideBean.requestVO.email}" pt:type="email" pt:placeholder="email" /></td>
             </tr>
             <tr>
                 <td><h:outputText value="Occasion: " /></td>
-                <td><h:inputText id="occasion"  value="#{requestRideBean.requestVO.occasion}" /></td>
+                <td><h:inputText id="occasion"  value="#{requestRideBean.requestVO.occasion}" pt:type="text" pt:placeholder="Occasion" /></td>
             </tr>
             <tr>		            
                 <td><h:outputText value="NeedADrink: " /></td>
-                <td><h:inputText id="needADrink"  value="#{requestRideBean.requestVO.needADrink}" /></td>
+                <td><h:inputText id="needADrink"  value="#{requestRideBean.requestVO.needADrink}" pt:type="text" pt:placeholder="No" /></td>
         	</tr>			
 			<tr>
 				<td></td>

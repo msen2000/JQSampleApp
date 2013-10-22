@@ -13,11 +13,13 @@ public class RequestDAO {
     
     public RequestDAO() {
         super();
+        System.out.println("RequestDAO() ctor called. ");        
     }
     /**     
      * @see     
      */
     public String insertRequest(Request req) {
+    	System.out.println("insertRequest() invoked. ");
         String requestId = "-1";
         Connection conn = null;
    	 	Statement stmt =null;
@@ -69,6 +71,7 @@ public class RequestDAO {
         return requestId;
     }    
     public List<Request> retrivePendingRequest() {
+    	System.out.println("retrivePendingRequest() invoked. ");
         List<Request> ress = new ArrayList<Request>();
         Connection conn = null;
    	 	Statement stmt =null;
@@ -116,6 +119,7 @@ public class RequestDAO {
     }    
     
     public void updateRequestStatus(String newStatus, String id) {
+    	System.out.println("updateRequestStatus() invoked. ");
     	 Connection conn = null;
     	 Statement stmt =null;
         try {

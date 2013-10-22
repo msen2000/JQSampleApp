@@ -2,12 +2,15 @@ package org.sen.view.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -17,25 +20,33 @@ import org.sen.limo.model.RequestDAO;
 @ManagedBean(name="adminBean")
 @RequestScoped
 public class AdminBean implements Serializable{
-    /**
-	 * 
-	 */
+    
 	private static final long serialVersionUID = 1L;
-	private List<RequestVO> requestVOs = new ArrayList<RequestVO>();
-    private List<RequestVO> confirmedRequests = new ArrayList<RequestVO>();
+	
+	private List<RequestVO> requestVOs;
+    private List<RequestVO> confirmedRequests;
     private RequestVO selectedRequestVO;
+    private String clickedRequestId;
         
-    public AdminBean() {
+    public AdminBean() {    	
         super();
-        populatePendingRequest();
-       // requestVOs = new ArrayList<RequestVO>(); //pending
-        //confirmedRequests = new ArrayList<RequestVO>(); //confirmed
-       
+        System.out.println("AdminBean() ctor has been invoked.");
+        this.populatePendingRequest();
+    }
+    
+    @PostConstruct
+    public void init() {
+    	System.out.println("The Initializer() : PostConstruct has been invoked.");
+    }
+
+    @PreDestroy
+    public void finalizer() {
+    	System.out.println("The Initializer() : PreDestroy has been invoked.");
     }
 
     public void populatePendingRequest() {
         requestVOs = new ArrayList<RequestVO>(); //pending
-        confirmedRequests = new ArrayList<RequestVO>(); 
+        confirmedRequests = new ArrayList<RequestVO>();  //Conformed
         RequestDAO dao = new RequestDAO();
         List<Request> reqs = dao.retrivePendingRequest();
         for(Request req :reqs) {        
@@ -58,14 +69,10 @@ public class AdminBean implements Serializable{
                 confirmedRequests.add(rvo);    
             }
         }
-    }
-    public void setRequestVOs(List requestVOs) {
-        this.requestVOs = requestVOs;
+        System.out.println("requestVOs size :"+requestVOs.size());
+        System.out.println("confirmedRequests size :"+confirmedRequests.size());
     }
 
-    public List getRequestVOs() {
-        return requestVOs;
-    }
 
     public void setConfirmedRequests(List<RequestVO> confirmedRequests) {
         this.confirmedRequests = confirmedRequests;
@@ -73,19 +80,6 @@ public class AdminBean implements Serializable{
 
     public List<RequestVO> getConfirmedRequests() {
         return confirmedRequests;
-    }
-
-    public void onConfirmRequest(ActionEvent actionEvent) {
-        // Add event code here...
-        System.out.println("onConfirmRequest TODO:");
-        
-        FacesContext context = FacesContext.getCurrentInstance();  
-        Map requestMap = context.getExternalContext().getRequestParameterMap();  
-        String clickedReqId = (String)requestMap.get("clickedReqId");
-        System.out.println("clickedReqId :"+clickedReqId);
-        RequestDAO dao = new RequestDAO();
-        dao.updateRequestStatus("Confirmed", clickedReqId);
-        //dao.updateRequestStatus("Confirmed", "1");
     }
 
     public void setSelectedRequestVO(RequestVO selectedRequestVO) {
@@ -96,7 +90,24 @@ public class AdminBean implements Serializable{
         return selectedRequestVO;
     }
 
+	public String getClickedRequestId() {
+		return clickedRequestId;
+	}
+
+	public void setClickedRequestId(String clickedRequestId) {
+		this.clickedRequestId = clickedRequestId;
+	}
+
+	public void setRequestVOs(List<RequestVO> requestVOs) {
+		this.requestVOs = requestVOs;
+	}
+	
+    public List getRequestVOs() {
+        return requestVOs;
+    }
+
     public void onRequestIdClicked(ActionEvent actionEvent) {
+    	System.out.println("onRequestIdClicked() invoked");
         FacesContext context = FacesContext.getCurrentInstance();  
         Map requestMap = context.getExternalContext().getRequestParameterMap();  
         String clickedReqId = (String)requestMap.get("currentReqId");
@@ -112,4 +123,40 @@ public class AdminBean implements Serializable{
         }
         
     }
+
+    public void onConfirmRequest(ActionEvent actionEvent) {
+        System.out.println("onConfirmRequest() invoked");
+        
+        FacesContext context = FacesContext.getCurrentInstance();  
+        Map requestMap = context.getExternalContext().getRequestParameterMap();  
+        String clickedReqId = (String)requestMap.get("clickedReqId");
+        System.out.println("clickedReqId :"+clickedReqId);
+        
+        RequestDAO dao = new RequestDAO();
+        dao.updateRequestStatus("Confirmed", clickedReqId);
+        
+        //Refress the data:
+//        if(clickedReqId != null) {
+//	        for(Iterator<RequestVO> it = requestVOs.iterator(); it.hasNext();) {        
+//	        	if (clickedReqId.equals(it.next().getID())) {
+//	        		it.remove();
+//	        	}
+//	        }
+//        }
+    }
+
+/*
+    public void moveToPending(ActionEvent actionEvent) {
+        System.out.println("moveToPending() invoked");
+        
+        FacesContext context = FacesContext.getCurrentInstance();  
+        Map requestMap = context.getExternalContext().getRequestParameterMap();  
+        String clickedReqId = (String)requestMap.get("clickedReqId");
+        System.out.println("clickedReqId :"+clickedReqId);
+        
+        RequestDAO dao = new RequestDAO();
+        dao.updateRequestStatus("Pending", clickedReqId);
+        
+    }
+*/
 }

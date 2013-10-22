@@ -24,14 +24,15 @@
 			<div class="ui-body-b">
 				<div data-role="navbar" id="navbar-1" data-iconpos="top">
 					<ul>						
-						<li><a href="adminhome.xhtml" data-icon="home">AdminHome</a></li>
-						<li><a href="/faces/pendingreq.xhtml" data-icon="star">PendingRequest</a></li>
-						<li><a href="/faces/confirmedreq.xhtml" data-icon="gear">ConfirmedRequest</a></li>					
+						<li><a href="/faces/adminhome.xhtml?faces-redirect=true" data-icon="home">AdminHome</a></li>
+						<li><a href="/faces/pendingreq.xhtml?faces-redirect=true" data-icon="star">PendingRequest</a></li>
+						<li><a href="/faces/confirmedreq.xhtml?faces-redirect=true" data-icon="gear">ConfirmedRequest</a></li>					
 				</ul>
 				</div>
 			</div>
 		</div> 
 		<div data-role="content">
+		<h:form>
 			<div data-role="collapsible-set">
 			 <ui:repeat value="#{adminBean.confirmedRequests}" var="item">			
 			  <div data-role="collapsible" data-iconpos="right" data-expanded-icon="bars">
@@ -39,18 +40,16 @@
 				<lable>Address:</lable> <small> #{item.email}</small>
 				<div>		
 					Call :<a href="tel:+15103869673">#{item.contactNumber}</a>
-					<a href="#confirmpopup" data-role="button" data-inline="true" data-transition="flip" data-position-to="origin" data-rel="popup" data-icon="alert">Pending Confirm?</a>
-					<div data-role="popup" id="confirmpopup" class="ui-content" data-theme="b" >
-						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-						<p><h1>#{item.yourName}</h1></p>
-						<h3>Would you like to confirm this reservation?</h3>
-						<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="check" >Yes</a>
-					</div>
-					
+					<h:commandButton value="Move to Pending?" actionListener="#{confirmReqBean.moveToPending}" 
+						action="confirmedreq?faces-redirect=true">
+						<f:param value="#{item.ID}" name="clickedReqId"/>
+						<f:attribute name="clickedRequestId" value="#{item.ID}" />
+					</h:commandButton>
 				</div>						
 			 </div>
 			</ui:repeat>
-			</div>	
+			</div>
+			</h:form>	
 		</div>
 		<div data-role="footer" id="footer-1" class="ui-bar" data-theme="c">
 			<h6>Terms | Policy</h6>	

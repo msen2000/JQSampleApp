@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 
 import org.sen.limo.domain.Request;
 import org.sen.limo.model.RequestDAO;
@@ -12,15 +11,15 @@ import org.sen.limo.model.RequestDAO;
 @ManagedBean(name="requestRideBean")
 @RequestScoped
 public class RequestRideBean  implements Serializable{
-    /**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
+
 	private RequestVO requestVO;
     private String requestConfNumber;
     
     public RequestRideBean() {
         super();
+        System.out.println("RequestRideBean() ctor has been invoked.");
         requestConfNumber = "";
         requestVO = new RequestVO();
     }
@@ -33,10 +32,9 @@ public class RequestRideBean  implements Serializable{
         return requestVO;
     }
     
-    public String onSubmitRequest() { 
-        
-            System.out.println("onSubmitRequest"); 
-            //return "success";
+    public String onSubmitRequest() {         
+            System.out.println("onSubmitRequest() invoked."); 
+            
             RequestDAO dao = new RequestDAO();
             Request req = new Request();
             req.typeOfLimo = requestVO.typeOfLimo;

@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
- <navigation-rule>
-  <display-name>adminlogin</display-name>
-  <navigation-case>
-   <from-action>adminhome</from-action>
-   <from-outcome>adminhome</from-outcome>
-   <to-view-id>/adminhome.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-action>adminhome</from-action>
-   <from-outcome>locations</from-outcome>
-   <to-view-id>/locations.xhtml</to-view-id>
-  </navigation-case>  
-  <navigation-case>
-   <from-action>pendingreq</from-action>
-   <from-outcome>pendingreq</from-outcome>
-   <to-view-id>/pendingreq.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-action>confirmedreq</from-action>
-   <from-outcome>confirmedreq</from-outcome>
-   <to-view-id>/confirmedreq.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-action>adminlogin</from-action>
-   <from-outcome>adminlogin</from-outcome>
-   <to-view-id>/adminlogin.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
+ 
  <application/>
 </faces-config>
